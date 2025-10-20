@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+    <h2>Edit Article</h2>
+    <form method="POST" action="">
+      <input type="text" name="title" required /><br />
+      <textarea name="content" rows="10" cols="50" required></textarea><br />
+      <input type="date" name="date" required /><br />
+      <button type="submit">Save</button>
+    </form>
+    <%- include('../partials/footer') %>
+  </body>
+</html>
