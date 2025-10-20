@@ -7,7 +7,35 @@
   <body>
     <%- include('../partials/header') %>
     <h2>Home Page</h2>
-    <p>Articles will be listed here...</p>
-    <%- include('../partials/footer') %>
+    <% if (articles.length === 0) { %>
+    <p>No articles yet. Add one!</p>
+    <% } else { %>
+    <table border="1" cellpadding="10">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% articles.forEach(article => { %>
+        <tr>
+          <td><a href="/article/<%=article.id %>"> <%= article.title %></a></td>
+          <td><%= article.date %></td>
+          <td>
+            <a href="/admin/edit/<%= article.id %>">✏️ Edit</a> |
+            <a href="/admin/delete/<%= article.id %>">🗑️ Delete</a>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <% } %> <% if(isAuthenticated) { %>
+    <button><a href="/logout">logout</a></button>
+    <% } else { %>
+    <button><a href="/login">login</a></button>
+
+    <% } %> <%- include('../partials/footer') %>
   </body>
 </html>

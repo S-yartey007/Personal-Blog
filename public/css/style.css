@@ -1,0 +1,31 @@
+.article-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.article-content h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.article-date {
+  color: #777;
+  font-style: italic;
+}
+
+.article-body {
+  line-height: 1.6;
+  font-size: 1.1em;
+  margin-top: 20px;
+}
+
+.article-footer {
+  margin-top: 40px;
+  text-align: left;
+}
+
+.article-footer a {
+  text-decoration: none;
+  color: #333;
+}

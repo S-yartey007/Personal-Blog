@@ -27,6 +27,10 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.session.isAuthenticated;
+  next();
+});
 
 //Routes
 app.use("/", guestRouter);
